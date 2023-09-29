@@ -1,0 +1,6 @@
+identify unusual login attempts from regions where your suppliers are based, you might use:
+
+SigninLogs
+| where Location in ('SupplierRegion1', 'SupplierRegion2')
+| summarize Count=count() by UserPrincipalName, Location
+| where Count > 5
