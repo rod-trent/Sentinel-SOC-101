@@ -1,0 +1,5 @@
+//This rule monitors `GitEvents` for modifications to the repository by users other than the ones specified, potentially highlighting unauthorized changes. Uses a custom table.
+
+GitEvents
+| where OperationName == 'RepoModified'
+| where User notin ('KnownDev1', 'KnownDev2')
