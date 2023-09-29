@@ -1,0 +1,27 @@
+//KQL Example of DoS attack against a web application
+
+//This query will return a table with the following columns:
+//TimeGenerated: The timestamp of the web request
+//clientIP_s: The IP address of the client that made the web request
+//requestUri_s: The URI of the web request
+//httpStatus_d: The HTTP status code of the web response
+//Requests: The number of requests made by the client IP address in the time range
+
+// Set the time range to look for potential DoS attacks
+let timeRange = 1h;
+// Set the threshold for the number of requests per IP address that indicates a DoS attack
+let threshold = 1000;
+// Get the web requests from the AzureDiagnostics table
+let webRequests = AzureDiagnostics
+| where TimeGenerated > ago(timeRange)
+| where Category == "ApplicationGatewayAccessLog"
+| project TimeGenerated, clientIP_s, requestUri_s, httpStatus_d;
+// Group the web requests by IP address and count the number of requests per IP
+let ipCounts = webRequests
+| summarize Requests = count() by clientIP_s
+| where Requests > threshold;
+// Join the ipCounts with the webRequests to get the details of the requests from the potential attackers
+ipCounts
+| join kind=inner webRequests on clientIP_s
+| project TimeGenerated, clientIP_s, requestUri_s, httpStatus_d, Requests
+| order by TimeGenerated desc
