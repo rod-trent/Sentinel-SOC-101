@@ -1,2 +1,11 @@
-# Sentinel-SOC-101
-Content and collateral for the Microsoft Sentinel SOC 101 series
+# Microsoft Sentinel SOC 101<br>
+Content and collateral for the Microsoft Sentinel SOC 101 series.
+
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Brute Force Attacks with Microsoft Sentinel</a> - <i>Posted SEP 18, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-443" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Phishing Attacks with Microsoft Sentinel</a> - <i>Posted SEP 19, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-321" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Malware Attacks with Microsoft Sentinel</a> - <i>Posted SEP 20, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-658" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Cross-Site Scripting (XSS) Attacks with Microsoft Sentinel</a> - <i>Posted SEP 21, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-f83" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Supply Chain Attacks with Microsoft Sentinel</a> - <i>Posted SEP 25, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-5ab" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Credential Reuse Attacks with Microsoft Sentinel</a> - <i>Posted SEP 26, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-28a" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate SQL Injection Attacks with Microsoft Sentinel</a> - <i>Posted SEP 27, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-8be" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Denial of Service Attacks with Microsoft Sentinel</a> - <i>Posted SEP 28, 2023</i>
