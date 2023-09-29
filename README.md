@@ -1,6 +1,9 @@
 # Microsoft Sentinel SOC 101<br>
 Content and collateral for the Microsoft Sentinel SOC 101 series.
 
+Announcing the Microsoft Sentinel 101 series on the <a href="https://rodtrent.substack.com/podcast" target="_blank">After the Blog</a> podcast: <a href="https://rodtrent.substack.com/p/episode-5-announcing-the-microsoft#details" target="_blank">Episode 5: Announcing the Microsoft Sentinel SOC 101 Blog Series</a>
+
+
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Brute Force Attacks with Microsoft Sentinel</a> - <i>Posted SEP 18, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-443" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Phishing Attacks with Microsoft Sentinel</a> - <i>Posted SEP 19, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-321" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Malware Attacks with Microsoft Sentinel</a> - <i>Posted SEP 20, 2023</i>
