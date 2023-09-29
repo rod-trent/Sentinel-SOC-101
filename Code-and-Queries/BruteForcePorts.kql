@@ -1,0 +1,6 @@
+detect brute force attacks targeting RDP or SSH management ports could be:
+
+SecurityEvent
+| where EventID == 4625
+| where (SubStatus == "0xc000006A" or SubStatus == "0xc0000064")
+| project TimeGenerated, EventID, WorkstationName, Computer, Account, LogonTypeName, LogonType, LogonProcessName, SubStatus, Activity
