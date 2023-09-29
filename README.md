@@ -1,5 +1,5 @@
 # Microsoft Sentinel SOC 101<br>
-Content and collateral for the Microsoft Sentinel SOC 101 series.
+## Content and collateral for the Microsoft Sentinel SOC 101 series.
 
 Announcing the Microsoft Sentinel 101 series on the <a href="https://rodtrent.substack.com/podcast" target="_blank">After the Blog</a> podcast: <a href="https://rodtrent.substack.com/p/episode-5-announcing-the-microsoft#details" target="_blank">Episode 5: Announcing the Microsoft Sentinel SOC 101 Blog Series</a>
 
