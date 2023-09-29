@@ -1,0 +1,6 @@
+//View all legacy authentication events within a specific time frame
+
+SecurityEvent  
+| where TimeGenerated > ago(1d) and EventID == 4624 and TargetLogonId != 0x0  
+| extend LegacyAuthentication = iif((LogonProcessName =~ "Advapi" or LogonProcessName =~ "Ssp"), "True", "False")  
+| where LegacyAuthentication == "True"  
