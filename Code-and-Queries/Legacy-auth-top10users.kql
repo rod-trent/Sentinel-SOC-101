@@ -1,0 +1,8 @@
+//View the top 10 users with the most legacy authentication events
+
+SecurityEvent  
+| where EventID == 4624 and TargetLogonId != 0x0  
+| extend LegacyAuthentication = iif((LogonProcessName =~ "Advapi" or LogonProcessName =~ "Ssp"), "True", "False")  
+| where LegacyAuthentication == "True"  
+| summarize count() by AccountName  
+| top 10 by count_  
