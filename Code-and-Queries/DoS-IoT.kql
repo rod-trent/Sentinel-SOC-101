@@ -1,0 +1,13 @@
+//KQL Example of DoS attack against an IoT device
+
+SecurityAlert
+| where ProductName == "Azure Security Center for IoT"
+| where AlertName == "Suspicion of Denial Of Service Attack"
+| where TimeGenerated <= ProcessingEndTime + 60m
+| extend DeviceId = tostring(parse_json(ExtendedProperties).DeviceId)
+| extend SourceDeviceAddress = tostring(parse_json(ExtendedProperties).SourceDeviceAddress)
+| extend DestDeviceAddress = tostring(parse_json(ExtendedProperties).DestinationDeviceAddress)
+| extend RemediationSteps = tostring(parse_json(RemediationSteps)[0])
+| extend Protocol = tostring(parse_json(ExtendedProperties).Protocol)
+| extend AlertManagementUri = tostring(parse_json(ExtendedProperties).AlertManagementUri)
+| project TimeGenerated, DeviceId, ProductName, ProductComponentName, AlertSeverity, AlertName, Description, Protocol, SourceDeviceAddress, DestDeviceAddress, RemediationSteps, Tactics, Entities, VendorOriginalId, AlertLink, AlertManagementUri
