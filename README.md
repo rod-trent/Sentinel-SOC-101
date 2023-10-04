@@ -15,5 +15,6 @@ Announcing the Microsoft Sentinel 101 series on the <a href="https://rodtrent.su
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-ae5" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Man-in-the-Middle (MitM) Attacks with Microsoft Sentinel</a> - <i>Posted SEP 29, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-980" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Keylogger Attacks with Microsoft Sentinel</a> - <i>Posted OCT 2, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-8d0" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Cryptojacking Attacks with Microsoft Sentinel</a> - <i>Posted OCT 3, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-2a3" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Drive-by Download Attacks with Microsoft Sentinel</a> - <i>Posted OCT 4, 2023</i>
 
 <p align="center"><img src="https://github.com/rod-trent/Sentinel-SOC-101/blob/main/Images/sentinelsocsmall.jpeg?raw=true" alt="Microsoft Sentinel SOC 101"></center></p>
