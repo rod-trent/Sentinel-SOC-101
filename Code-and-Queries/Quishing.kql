@@ -1,0 +1,9 @@
+//Detect QR Codes in emails
+
+let image_extensions = dynamic(["jpg", "jpeg", "png", "bmp", "gif"]);
+EmailAttachmentInfo
+| where FileType in (image_extensions)
+| where FileName matches regex "[A-Z0-9]{9,10}.[A-Za-z0-9]+$"
+| join EmailUrlInfo on TenantId
+| where UrlLocation == "Attachment"
+| distinct FileName, FileType, SenderFromAddress, RecipientEmailAddress, UrlDomain, Url
