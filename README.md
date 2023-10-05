@@ -5,7 +5,7 @@ Announcing the Microsoft Sentinel 101 series on the <a href="https://rodtrent.su
 
 Get the eBook: https://github.com/rod-trent/Sentinel-SOC-101/tree/main/eBook 
 
-##TOC
+## TOC
 
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Brute Force Attacks with Microsoft Sentinel</a> - <i>Posted SEP 18, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-443" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Phishing Attacks with Microsoft Sentinel</a> - <i>Posted SEP 19, 2023</i>
