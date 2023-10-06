@@ -8,5 +8,5 @@ The book will be updated when each new part in this series is released.
 
 This book is updated every time a new part of this series is chaptered. The most current edition of this book will always be located at: https://github.com/rod-trent/Sentinel-SOC-101/tree/main/eBook 
 
-*Book release ver. 0.002, October 6, 2023 8:30am EST*
+*Book release ver. 0.003, October 6, 2023 10:35am EST*
 
