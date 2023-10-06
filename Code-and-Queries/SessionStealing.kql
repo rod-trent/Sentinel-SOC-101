@@ -1,0 +1,35 @@
+// Define the time range and the threshold for the number of sessions per user
+let starttime = 7d;
+let endtime = now();
+let session_threshold = 10;
+// Get the sign-in events from Azure Active Directory
+let signin_events = SigninLogs
+| where TimeGenerated between (starttime .. endtime)
+| where ResultType == 0 // successful sign-ins only
+| project TimeGenerated, UserPrincipalName, IPAddress, SessionId;
+// Get the cloud app events from Microsoft Cloud App Security
+let cloudapp_events = CloudAppEvents
+| where TimeGenerated between (starttime .. endtime)
+| project TimeGenerated, UserPrincipalName, IPAddress, SessionId;
+// Join the sign-in events and the cloud app events by user principal name and session id
+let joined_events = signin_events
+| join kind=inner cloudapp_events on UserPrincipalName, SessionId
+| project TimeGenerated, UserPrincipalName, IPAddress, SessionId;
+// Group the events by user principal name and session id, and count the number of distinct IP addresses per session
+let session_stats = joined_events
+| summarize IPCount = dcount(IPAddress) by UserPrincipalName, SessionId
+| project UserPrincipalName, SessionId, IPCount;
+// Find the sessions that have more than one IP address associated with them
+let multi_ip_sessions = session_stats
+| where IPCount > 1
+| project UserPrincipalName, SessionId;
+// Find the users that have more than the threshold number of sessions with multiple IP addresses
+let suspicious_users = multi_ip_sessions
+| summarize SessionCount = count() by UserPrincipalName
+| where SessionCount > session_threshold
+| project UserPrincipalName;
+// Return the suspicious users and their sessions with multiple IP addresses
+suspicious_users
+| join kind=inner multi_ip_sessions on UserPrincipalName
+| join kind=inner session_stats on UserPrincipalName, SessionId
+| project UserPrincipalName, SessionId, IPCount;
