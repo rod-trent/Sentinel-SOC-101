@@ -1,0 +1,9 @@
+//This query determines emails sent by top malicious/bad IP addresses.
+
+let cutoff = 5;
+EmailEvents
+| where ThreatTypes has "Malware" or ThreatTypes has "Phish"
+| summarize count() by SenderIPv4
+| where count_ > cutoff // Arbitrary cutoff, increase or decrease as needed
+| join EmailEvents on SenderIPv4  
+| where DeliveryAction =~ "Delivered"
