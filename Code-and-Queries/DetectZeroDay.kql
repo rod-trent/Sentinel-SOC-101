@@ -1,0 +1,10 @@
+//Based on available IOCs, the following KQL query example detects CVE-2023-23397
+DeviceProcessEvents
+| where InitiatingProcessFileName == "svchost.exe"
+| where FileName == "rundll32.exe" and ProcessCommandLine contains "davclnt.dll" and ProcessCommandLine contains "DavSetCookie"
+| where ProcessCommandLine !contains "http://10."
+| where ProcessCommandLine !contains "http://192.168."
+| extend url = split(ProcessCommandLine, "http://")[1]
+| extend domain = split(url, "/")[0]
+| where domain contains "." and domain !endswith ".local"
+| summarize count() by tostring(domain)
