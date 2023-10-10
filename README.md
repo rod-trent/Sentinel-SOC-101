@@ -23,5 +23,6 @@ Get the eBook: https://github.com/rod-trent/Sentinel-SOC-101/tree/main/eBook
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-b94" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Quishing Attacks with Microsoft Sentinel</a> - <i>Posted OCT 5, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-214" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Session Token Stealing Attacks with Microsoft Sentinel</a> - <i>Posted OCT 6, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-15e" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Fileless Malware Attacks with Microsoft Sentinel</a> - <i>Posted OCT 9, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-018" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Zero-day Exploits with Microsoft Sentinel</a> - <i>Posted OCT 10, 2023</i>
 
 <p align="center"><img src="https://github.com/rod-trent/Sentinel-SOC-101/blob/main/Images/sentinelsocsmall.jpeg?raw=true" alt="Microsoft Sentinel SOC 101"></center></p>
