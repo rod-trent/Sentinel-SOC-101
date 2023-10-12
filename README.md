@@ -25,5 +25,6 @@ Get the eBook: https://github.com/rod-trent/Sentinel-SOC-101/tree/main/eBook
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-15e" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Fileless Malware Attacks with Microsoft Sentinel</a> - <i>Posted OCT 9, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-018" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Zero-day Exploits with Microsoft Sentinel</a> - <i>Posted OCT 10, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-40b" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate a DNS Spoofing Attack with Microsoft Sentinel</a> - <i>Posted OCT 11, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-07c" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Advanced Persistent Threats (APTs) with Microsoft Sentinel</a> - <i>Posted OCT 12, 2023</i>
 
 <p align="center"><img src="https://github.com/rod-trent/Sentinel-SOC-101/blob/main/Images/sentinelsocsmall.jpeg?raw=true" alt="Microsoft Sentinel SOC 101"></center></p>
