@@ -1,0 +1,13 @@
+SigninLogs
+| where ResultType == "50126" // Failed sign-in due to bad username or password
+| where UserPrincipalName in ((Get-AzureADDirectoryRoleMember -ObjectId (Get-AzureADDirectoryRole | Where-Object {$_.displayName -eq "Global Administrator"}).ObjectId).UserPrincipalName) // Filter by global administrators
+| summarize count() by UserPrincipalName // Count the number of failed sign-in attempts by user
+| where count_ > 6 // Filter by users who have more than 6 failed sign-in attempts
+| join kind=inner ( // Join with the original sign-in logs table
+    SigninLogs
+    | where ResultType == "50126"
+    | where UserPrincipalName in ((Get-AzureADDirectoryRoleMember -ObjectId (Get-AzureADDirectoryRole | Where-Object {$_.displayName -eq "Global Administrator"}).ObjectId).UserPrincipalName)
+    | summarize min(TimeGenerated), max(TimeGenerated) by UserPrincipalName // Get the first and last failed sign-in time by user
+) on UserPrincipalName
+| where (max_TimeGenerated - min_TimeGenerated) < 10m // Filter by users who have failed sign-in attempts within 10 minutes
+| project UserPrincipalName, count_, min_TimeGenerated, max_TimeGenerated // Select the relevant columns
