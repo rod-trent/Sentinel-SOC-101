@@ -1,0 +1,12 @@
+//Rare Domains Seen in Cloud Logs
+
+OfficeActivity
+| where TimeGenerated > ago(7d) // filter for the last 7 days
+| where  RecordType == "SharePointFileOperation" or RecordType == "ExchangeItem"
+| where Operation in ("FileDownloaded", "FileUploaded", "MailItemsAccessed")
+| join kind=inner ( // join with the threat intelligence indicators table
+    ThreatIntelligenceIndicator
+    | where TimeGenerated > ago(7d) // filter for the last 7 days
+    | where ThreatType == "Malware" // filter for malware indicators
+) on $left.SourceFileExtension == $right.FileHashType // join on the file extension and hash type
+| project OrganizationName, OfficeId, UserId, Operation, SourceFileName, SourceRelativeUrl, FileHashValue, IndicatorId, Description // select the relevant columns
