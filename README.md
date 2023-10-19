@@ -27,5 +27,6 @@ Get the eBook: https://github.com/rod-trent/Sentinel-SOC-101/tree/main/eBook
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-40b" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate a DNS Spoofing Attack with Microsoft Sentinel</a> - <i>Posted OCT 11, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-07c" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Advanced Persistent Threats (APTs) with Microsoft Sentinel</a> - <i>Posted OCT 12, 2023</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-513" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate a VIP Account that has Multiple Failed Logons within a Threshold with Microsoft Sentinel</a> - <i>Posted OCT 17, 2023</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-940" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Rare Domains Seen in Cloud Logs</a> - <i>Posted OCT 19, 2023</i>
 
 <p align="center"><img src="https://github.com/rod-trent/Sentinel-SOC-101/blob/main/Images/sentinelsocsmall.jpeg?raw=true" alt="Microsoft Sentinel SOC 101"></center></p>
