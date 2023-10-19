@@ -1,12 +1,29 @@
 //Rare Domains Seen in Cloud Logs
 
-OfficeActivity
-| where TimeGenerated > ago(7d) // filter for the last 7 days
-| where  RecordType == "SharePointFileOperation" or RecordType == "ExchangeItem"
-| where Operation in ("FileDownloaded", "FileUploaded", "MailItemsAccessed")
-| join kind=inner ( // join with the threat intelligence indicators table
-    ThreatIntelligenceIndicator
-    | where TimeGenerated > ago(7d) // filter for the last 7 days
-    | where ThreatType == "Malware" // filter for malware indicators
-) on $left.SourceFileExtension == $right.FileHashType // join on the file extension and hash type
-| project OrganizationName, OfficeId, UserId, Operation, SourceFileName, SourceRelativeUrl, FileHashValue, IndicatorId, Description // select the relevant columns
+// Define the time range to look for OfficeActivity events
+let Lookback = ago(7d);
+// Get the OfficeActivity events and filter by OperationName
+let OfficeEvents = OfficeActivity
+| where TimeGenerated > Lookback
+| where Operation in ("FileDownloaded", "FileUploaded")
+| extend Domain = tostring(split(SourceRelativeUrl, "/")[2]) // extract the domain name from the file URL
+| project TimeGenerated, UserId, Operation, SourceFileName, Domain;
+// Get the ThreatIntelligenceIndicator records and filter by ThreatType
+let TIRecords = ThreatIntelligenceIndicator
+| where TimeGenerated > Lookback
+| where ThreatType == "DomainName"
+| project Domain = NetworkDestinationAsn, ThreatSeverity;
+// Join the OfficeEvents and TIRecords tables on Domain
+let JoinedEvents = OfficeEvents
+| join kind=leftouter (
+    TIRecords
+) on Domain;
+// Calculate the rarity score of each domain based on its frequency and threat level
+// The rarity score is defined as log10(Count) * (ThreatLevel + 1), where Count is the number of events for each domain and ThreatLevel is a numeric value from 0 to 3
+// The higher the rarity score, the more rare and potentially malicious the domain is
+let RarityScore = JoinedEvents
+| summarize Count = count() by Domain, ThreatSeverity // count the number of events for each domain and threat level combination
+| extend RarityScore = log10(Count) * (ThreatSeverity + 1) // calculate the rarity score
+| order by RarityScore desc; // order by rarity score in descending order
+// Display the results
+RarityScore
