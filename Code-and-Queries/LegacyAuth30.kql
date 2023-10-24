@@ -1,0 +1,5 @@
+//This query returns all sign-in attempts using legacy authentication protocols in the last 30 days. 
+
+SigninLogs
+| where TimeGenerated > ago(30d)
+| where ClientAppUsed in ("Browser", "Exchange ActiveSync", "IMAP4", "Mobile Apps and Desktop clients", "Other clients", "POP3", "SMTP")
