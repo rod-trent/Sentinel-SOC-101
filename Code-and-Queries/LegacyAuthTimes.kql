@@ -1,0 +1,7 @@
+//This query groups and counts the sign-in attempts by user principal name (UPN), which is usually the same as the user’s email address, and orders them by descending order
+
+SigninLogs
+| where TimeGenerated > ago(30d)
+| where ClientAppUsed in ("Browser", "Exchange ActiveSync", "IMAP4", "Mobile Apps and Desktop clients", "Other clients", "POP3", "SMTP")
+| summarize count() by UserPrincipalName
+| order by count_ desc
