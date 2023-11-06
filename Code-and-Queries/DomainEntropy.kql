@@ -1,0 +1,11 @@
+//Detect rare domains seen in the Office 365 audit logs
+
+OfficeActivity
+| where TimeGenerated > ago(30d)
+| where Operation in ("Send", "Receive", "Download", "Upload", "Accessed", "Modified", "Renamed", "Deleted", "Shared", "Unshared")
+| summarize Users=dcount(UserId), UserAgents=dcount(UserAgent), Records=count() by OrganizationName
+| extend DomainLength = strlen(OrganizationName)
+| extend Entropy = DomainLength * 1.0 / array_length(split(OrganizationName, ""))
+| where Entropy > 3.5
+| order by Users asc
+| take 10
