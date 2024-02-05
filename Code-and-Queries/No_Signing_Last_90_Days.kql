@@ -1,0 +1,15 @@
+//Get a list of users who have not signed in for more than 90 days
+
+SigninLogs
+| where TimeGenerated > ago(30d)
+| summarize arg_max(TimeGenerated, *) by UserPrincipalName
+| project UserPrincipalName, TimeGenerated
+| join kind=leftouter (
+    externaldata(displayName:string,lastSignInDateTime:datetime)
+    [@"https://graph.microsoft.com/v1.0/users?$select=displayName,signInActivity"]
+    with(format="json", ingestionMapping=[{"column":"displayName","path":"displayName"},{"column":"lastSignInDateTime","path":"signInActivity/lastSignInDateTime"}])
+    on $left.UserPrincipalName == $right.displayName
+)
+on UserPrincipalName
+| project UserPrincipalName, TimeGenerated, lastSignInDateTime
+| where lastSignInDateTime < ago(90d)
