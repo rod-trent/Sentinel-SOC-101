@@ -31,5 +31,6 @@ Get the eBook: https://github.com/rod-trent/Sentinel-SOC-101/tree/main/eBook
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-448" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Inactive Account Sign-ins with Microsoft Sentinel
 Where have you been?</a> - <i>Posted FEB 5, 2024</i>
 * <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-ebc" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Social Engineering Attacks with Microsoft Sentinel</a> - <i>Posted FEB 6, 2024</i>
+* <a href="https://rodtrent.substack.com/p/microsoft-sentinel-soc-101-how-to-9b0" target="_blank">Microsoft Sentinel SOC 101: How to Detect and Mitigate Multiple Microsoft Teams Deleted by a Single User with Microsoft Sentinel</a> - <i>Posted FEB 7, 2024</i>
 
 <p align="center"><img src="https://github.com/rod-trent/Sentinel-SOC-101/blob/main/Images/sentinelsocsmall.jpeg?raw=true" alt="Microsoft Sentinel SOC 101"></center></p>
