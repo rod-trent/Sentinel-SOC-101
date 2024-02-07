@@ -1,0 +1,7 @@
+Detecting multiple Teams deletion from a single IP address:
+
+OfficeActivity
+| where TimeGenerated > ago(1h)
+| where Operation =~ \"TeamDeleted\"
+| summarize count() by ClientIP
+| where count_ > 5
