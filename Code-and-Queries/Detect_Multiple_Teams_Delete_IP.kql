@@ -1,4 +1,4 @@
-Detecting multiple Teams deletion from a single IP address:
+//Detecting multiple Teams deletion from a single IP address
 
 OfficeActivity
 | where TimeGenerated > ago(1h)
