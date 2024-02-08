@@ -1,4 +1,4 @@
-Detecting multiple Teams deletion by a single user:
+//Detecting multiple Teams deletion by a single user
 
 OfficeActivity
 | where TimeGenerated > ago(1h)
