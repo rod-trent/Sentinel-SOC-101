@@ -1,0 +1,9 @@
+let lookbackTime = 7d;
+let threshold = 5;
+EmailEvents
+| where TimeGenerated >= ago(lookbackTime)
+| where Subject has_any ("urgent", "payment", "required", "request")
+| where SenderFromDomain != RecipientDomain
+| summarize Count = count() by SenderFromDomain, RecipientEmailAddress
+| where Count > threshold
+| project SenderFromDomain, RecipientEmailAddress, Count
