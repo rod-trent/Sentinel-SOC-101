@@ -1,3 +1,5 @@
+//This query looks for email events in the last seven days where the subject contains certain keywords, the sender’s domain is different from the recipients, and the count of such emails exceeds a threshold.
+
 let lookbackTime = 7d;
 let threshold = 5;
 EmailEvents
